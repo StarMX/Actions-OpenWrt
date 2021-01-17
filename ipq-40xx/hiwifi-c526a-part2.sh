@@ -14,9 +14,12 @@ CONFIG_TARGET_ipq40xx=y
 CONFIG_TARGET_ipq40xx_DEVICE_hiwifi_c526a=y
 EOF
 
-# 禁用 IPV6
+# IPV6
 cat >> .config <<EOF
-# CONFIG_IPV6 is not set
+CONFIG_PACKAGE_luci-proto-ipv6=y
+CONFIG_PACKAGE_odhcp6c=y
+CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
+
 EOF
 
 # 取消默认启用的包
